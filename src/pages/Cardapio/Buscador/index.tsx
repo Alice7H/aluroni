@@ -9,7 +9,14 @@ interface Props {
 export default function Buscador({ busca, setBusca }: Props){
   return(
     <div className={styles.buscador}>
-      <input type="text" value={busca} onChange={(event) => {setBusca(event.target.value)}}/>
+      <label htmlFor="buscar" className={styles.hide}>Buscar</label>
+      <input 
+       type="text" 
+       value={busca} 
+       id="buscar"
+       onChange={(event) => {setBusca(event.target.value)}}
+        placeholder="Buscar"
+      />
       <CgSearch size={20} color="#4c4d5f"/>
     </div>
   );

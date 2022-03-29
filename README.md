@@ -80,3 +80,7 @@ Ou, usar o comando `npm install normalize.css` e importar na aplicação, antes 
 ## Padrão BEM
 
 É uma metodologia ou padrão css usada, essa sigla significa Block Element Modifier (Bloco de Elemento Modificador) e consiste em nomear classes para os elementos da marcação html baseado na função estrutural do elemento e não na sua função de apresentação.
+
+## Classnames
+
+O classnames é uma biblioteca, serve como uma maneira de não ficar concatenando vários nomes de classes que precisam ser condicionais no mesmo elemento.
