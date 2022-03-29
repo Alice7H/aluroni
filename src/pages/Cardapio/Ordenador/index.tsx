@@ -1,15 +1,11 @@
 import styles from './Ordenador.module.scss';
 import opcoes from './opcoes.json';
-import { useState } from 'react';
+import { useState} from 'react';
 import classNames from 'classnames';
 import { MdKeyboardArrowUp, MdKeyboardArrowDown } from 'react-icons/md';
+import { IOrdenador, OpcoesOrdenador } from '../../../types/ordenador';
 
-interface Props {
-  ordenador: string;
-  setOrdenador: React.Dispatch<React.SetStateAction<string>>
-}
-
-export default function Ordenador({ ordenador, setOrdenador }: Props){
+export default function Ordenador({ ordenador, setOrdenador }: IOrdenador){
   const [aberto, setAberto] = useState(false);
   const nomeOrdenador = ordenador && opcoes.find(opcao => opcao.value === ordenador)?.nome;
 
@@ -36,7 +32,7 @@ export default function Ordenador({ ordenador, setOrdenador }: Props){
           <div 
             className={styles.ordenador__option} 
             key={opcao.value}
-            onClick={()=> setOrdenador(opcao.value)}
+            onClick={()=> setOrdenador(opcao.value as OpcoesOrdenador)}
           >
             {opcao.nome}
           </div>

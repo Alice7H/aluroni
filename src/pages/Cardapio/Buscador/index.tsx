@@ -1,12 +1,9 @@
 import React from "react";
 import styles from './Buscador.module.scss';
 import { CgSearch } from 'react-icons/cg';
+import { IBuscador } from "types/buscador";
 
-interface Props {
-  busca: string;
-  setBusca: React.Dispatch<React.SetStateAction<string>>;
-}
-export default function Buscador({ busca, setBusca }: Props){
+export default function Buscador({ busca, setBusca }: IBuscador){
   return(
     <div className={styles.buscador}>
       <label htmlFor="buscar" className={styles.hide}>Buscar</label>

@@ -1,6 +1,10 @@
+<h1 align="center">
+  <img alt="Aluroni" title="#Aluroni" src="./src/assets/banner.png" />
+</h1>
+
 # Aluroni - React- lidando com arquivos estáticos
 
-Professor Luiz Fernando Ribeiro
+Curso ministrado por Luiz Fernando Ribeiro
 
 ## Conteúdo do curso da Alura
 
@@ -83,4 +87,59 @@ Ou, usar o comando `npm install normalize.css` e importar na aplicação, antes 
 
 ## Classnames
 
-O classnames é uma biblioteca, serve como uma maneira de não ficar concatenando vários nomes de classes que precisam ser condicionais no mesmo elemento.
+O classnames é uma biblioteca, serve como uma maneira de não ficar concatenando vários nomes de classes que precisam ser condicionais no mesmo elemento, utilizando a sintaxe de objetos.
+
+## Typeof
+
+O operador typeof permite inferir a tipagem de um objeto sem a necessidade de criar uma interface.
+
+## Manipulação de objetos
+
+Utilizamos [] em volta do nome da chave de um objeto quando o valor da chave é dinâmico.
+Ex:
+classNames({
+[styles['ativo']] = true;
+})
+
+## Mais sobre classnames
+
+Quando a condição é sempre true, então a sintaxe de objeto não é necessária.
+Ex:
+
+```
+  <div
+    className={classNames({
+      [styles.item__tipo]: true,
+      [styles[`item__tipo__${category.label.toLowerCase()}`]]: true,
+    })}
+  >
+    {category.label}
+  </div>
+```
+
+Pode ser substituído por:
+
+```
+  <div
+    className={classNames(
+      styles.item__tipo,
+      styles[`item__tipo__${category.label.toLowerCase()}`]
+    )}
+  >
+    {category.label}
+  </div>
+```
+
+## Import de imagens dinâmico
+
+Ao adicionar o caminho da localização das imagens no source das imagens dos itens do cardápio, o React entende que estamos passando uma string e não o caminho.
+
+Precisamos especificar isso para ele, para isso usamos a pasta `public`.
+
+## Build
+
+Ao gerar arquivos utilizados em produção com o comando `npm run build`, podemos verificar quais arquivos estarão presentes nesse ambiente, isso pode te ajudar caso esteja perdido em relação aos caminhos de pastas.
+
+## Spread Operator
+
+Podemos utilizar o spread operator para não precisar passar as props manualmente quando temos total controle do componente.
