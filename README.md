@@ -1,46 +1,82 @@
-# Getting Started with Create React App
+# Aluroni - React- lidando com arquivos estáticos
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Professor Luiz Fernando Ribeiro
 
-## Available Scripts
+## Conteúdo do curso da Alura
 
-In the project directory, you can run:
+- normalize
+- absolute import
+- import de imagem
+- imports dinâmicos
+- classnames
 
-### `npm start`
+A aplicação é um cardápio de restaurante, separados em abas de acordo com os tipos de alimentos.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Desenvolvido com react e typescript.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## Template e CRA
 
-### `npm test`
+Create React App (CRA) é uma biblioteca que cria a estrutura inicial de um projeto React com base nos padrões comuns adotados pela comunidade, incluindo ferramentas como testes.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Há várias maneiras de estruturar projetos com React dependendo das necessidades e preferências de quem está usando a ferramenta. Para isso o CRA oferece templates, que são variações do projeto padrão.
 
-### `npm run build`
+O CRA possui dois templates por padrão:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- cra-template que é o comum, usado quando nenhum template é definido;
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- cra-template-typescript que possui todas as características do template acima junto de configurações necessárias para usar TypeScript no projeto.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Como qualquer um pode criar seu template, é possível criar vários projetos personalizados com React, pois templates podem ser disponibilizados como pacotes do npm.
 
-### `npm run eject`
+Pesquisando por cra-template-\* no site do npm podemos encontrar vários templates criados pela comunidade.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+O padrão adotado é sempre cra-template- seguido do nome do template.
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Instalando dependências
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+- css-modules
+- sass
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+## Sass com CSS modules e Typescript
 
-## Learn More
+O Sass é uma variação do CSS, com funcionalidades adicionais, que agiliza a criação de estilos e deve ser compilada para CSS.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+O Sass oferece algumas ferramentas que facilitam a escrita, como aninhamento. É escrito em desenvolvimento e compilado para CSS puro.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+O Sass é utilizado pelos componentes via CSS Modules.
+
+O CSS Modules e o TypeScript usados em componentes são convertidos em JavaScript para a aplicação rodar nos navegadores, e o Sass é convertido para CSS.
+
+O typescript-plugin-css-modules oferece tipagem para os estilos e facilita o uso dos estilos como módulos em componentes pois possibilita o uso do autocomplete.
+
+Todas essas bibliotecas trabalham juntas, fazendo algum tipo de conversão para que o código escrito seja compreendido pelo navegador.
+
+- Sass facilita a escrita de estilos
+- CSS modules facilita a aplicação desses estilos.
+- TypeScript ajuda na experiência de desenvolvimento dos componentes.
+
+## Import de imagens
+
+Para adicionar uma imagem svg, importamos ela para que o webpack entenda o source (src) como um arquivo estático e não como uma string qualquer no momento de build.
+
+## Absolute imports
+
+Para o import absoluto, configuramos o arquivo tsconfig.json, adicionando o atributo `baseUrl` e definindo como src.
+
+Desta forma, indicamos a url base para os imports, isso evita voltar pastas ao importar um arquivos
+
+## Fontes
+
+A fonte externa aplicada foi a `italiana`, retirada do google fonts, localizada em `https://fonts.google.com/`.
+
+## Normalize
+
+O normalize é uma alternativa para redefinições de css.
+
+Ao invés de fazer o reset do css, podemos fazer o normalize utilizando a propriedade `@import-normalize` que atualmente não está em funcionamento.
+
+Ou, usar o comando `npm install normalize.css` e importar na aplicação, antes do index.css principal.
+
+## Padrão BEM
+
+É uma metodologia ou padrão css usada, essa sigla significa Block Element Modifier (Bloco de Elemento Modificador) e consiste em nomear classes para os elementos da marcação html baseado na função estrutural do elemento e não na sua função de apresentação.
