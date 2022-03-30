@@ -2,7 +2,7 @@
   <img alt="Aluroni" title="#Aluroni" src="./src/assets/banner.png" />
 </h1>
 
-# Aluroni - React- lidando com arquivos estáticos
+# Aluroni - React - lidando com arquivos estáticos
 
 Curso ministrado por Luiz Fernando Ribeiro
 
